@@ -1,5 +1,6 @@
 {
   "name": "masonry",
+  "version": "4.0.0",
   "description": "Cascading grid layout library",
   "main": "masonry.js",
   "dependencies": {
