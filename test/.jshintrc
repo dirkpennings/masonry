@@ -4,7 +4,6 @@
   "undef": true,
   "unused": true,
   "globals": {
-    "getSize": false,
     "Masonry": false,
     "checkItemPositions": false,
     "QUnit": false
