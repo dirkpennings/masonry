@@ -237,7 +237,7 @@ if ( typeof define === 'function' && define.amd ) {
  */
 
 ;(function () {
-    
+
 
     /**
      * Class for managing events.
@@ -1101,7 +1101,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 ( function( ElemProto ) {
 
-  
+
 
   var matchesMethod = ( function() {
     // check for the standard method name first
@@ -1207,7 +1207,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -1257,7 +1257,7 @@ utils.modulo = function( num, div ) {
 };
 
 // ----- isArray ----- //
-  
+
 var objToString = Object.prototype.toString;
 utils.isArray = function( obj ) {
   return objToString.call( obj ) == '[object Array]';
@@ -1474,7 +1474,7 @@ return utils;
  */
 
 ( function( window, factory ) {
-  
+
   // universal module definition
   if ( typeof define === 'function' && define.amd ) {
     // AMD
@@ -1618,12 +1618,16 @@ Item.prototype.getSize = function() {
  * @param {Object} style
  */
 Item.prototype.css = function( style ) {
-  var elemStyle = this.element.style;
+  try {
+    var elemStyle = this.element.style;
 
-  for ( var prop in style ) {
-    // use vendor property if available
-    var supportedProp = vendorProperties[ prop ] || prop;
-    elemStyle[ supportedProp ] = style[ prop ];
+    for ( var prop in style ) {
+      // use vendor property if available
+      var supportedProp = vendorProperties[ prop ] || prop;
+      elemStyle[ supportedProp ] = style[ prop ];
+    }
+  } catch(e) {
+
   }
 };
 
@@ -2061,7 +2065,7 @@ return Item;
  */
 
 ( function( window, factory ) {
-  
+
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -2990,7 +2994,7 @@ return Outlayer;
  */
 
 ( function( window, factory ) {
-  
+
   // universal module definition
   if ( typeof define === 'function' && define.amd ) {
     // AMD
